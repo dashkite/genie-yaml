@@ -1,17 +1,36 @@
 import * as _ from "@dashkite/joy"
 import * as M from "@dashkite/masonry"
 import yaml from "@dashkite/masonry-yaml"
-import { Files as P } from "@dashkite/genie-files"
+import { File as F, Files as P } from "@dashkite/masonry-files"
+
+defaults =
+  targets:
+    browser: [
+      preset: "js"
+      glob: [
+        "src/**/*.yaml"
+        "test/**/*.yaml"
+      ]
+    ]
+    node: [
+      preset: "js"
+      glob: [
+        "src/**/*.yaml"
+        "test/**/*.yaml"
+      ]
+    ]
 
 export default ( Genie ) ->
 
-  options = Genie.get "yaml"
+  options = { defaults..., ( Genie.get "yaml" )... }
 
-  Genie.on "build", m.start [
+  Genie.on "build", "yaml"
+  
+  Genie.define "yaml", M.start [
     P.targets options.targets
-    m.read
-    m.tr yaml
-    m.extension ".${ build.preset }"
-    m.write "build/${ build.target }"
+    M.read
+    M.tr yaml
+    F.extension ".${ build.preset }"
+    F.write "build/${ build.target }"
   ]
 
