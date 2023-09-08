@@ -8,9 +8,9 @@ dependencies:
   '@dashkite/masonry':
     specifier: link:../masonry
     version: link:../masonry
-  '@dashkite/masonry-files':
-    specifier: link:../masonry-files
-    version: link:../masonry-files
+  '@dashkite/masonry-targets':
+    specifier: link:../masonry-targets
+    version: link:../masonry-targets
   '@dashkite/masonry-yaml':
     specifier: link:../masonry-yaml
     version: link:../masonry-yaml

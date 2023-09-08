@@ -1,7 +1,7 @@
 import * as _ from "@dashkite/joy"
 import * as M from "@dashkite/masonry"
 import yaml from "@dashkite/masonry-yaml"
-import { File as F, Files as P } from "@dashkite/masonry-files"
+import T from "@dashkite/masonry-targets"
 
 defaults =
   targets:
@@ -27,10 +27,10 @@ export default ( Genie ) ->
   Genie.on "build", "yaml"
   
   Genie.define "yaml", M.start [
-    P.targets options.targets
+    T.glob options.targets
     M.read
     M.tr yaml
-    F.extension ".${ build.preset }"
-    F.write "build/${ build.target }"
+    T.extension ".${ build.preset }"
+    T.write "build/${ build.target }"
   ]
 
