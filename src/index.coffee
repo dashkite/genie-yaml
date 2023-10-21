@@ -2,7 +2,7 @@ import * as _ from "@dashkite/joy"
 import * as M from "@dashkite/masonry"
 import yaml from "@dashkite/masonry-yaml"
 import T from "@dashkite/masonry-targets"
-import W from "@dashkite/masonry-targets/watch"
+import W from "@dashkite/masonry-watch"
 
 defaults =
   targets:
