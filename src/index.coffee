@@ -3,6 +3,7 @@ import * as M from "@dashkite/masonry"
 import yaml from "@dashkite/masonry-yaml"
 import T from "@dashkite/masonry-targets"
 import W from "@dashkite/masonry-watch"
+import modularize from "@dashkite/masonry-export"
 
 defaults =
   targets:
@@ -30,7 +31,7 @@ export default ( Genie ) ->
   Genie.define "yaml", M.start [
     T.glob options.targets
     M.read
-    M.tr yaml
+    M.tr [ yaml, modularize ]
     T.extension ".${ build.preset }"
     T.write "build/${ build.target }"
   ]
@@ -39,7 +40,7 @@ export default ( Genie ) ->
     W.glob options.targets
     W.match type: "file", name: [ "add", "change" ], [
       M.read
-      M.tr yaml
+      M.tr [ yaml, modularize ]
       T.extension ".${ build.preset }"
       T.write "build/${ build.target }"
     ]
