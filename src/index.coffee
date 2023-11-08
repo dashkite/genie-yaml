@@ -2,6 +2,7 @@ import * as _ from "@dashkite/joy"
 import * as M from "@dashkite/masonry"
 import yaml from "@dashkite/masonry-yaml"
 import T from "@dashkite/masonry-targets"
+import modularize from "@dashkite/masonry-export"
 
 defaults =
   targets:
@@ -40,7 +41,7 @@ export default ( Genie ) ->
       W.glob options.targets
       W.match type: "file", name: [ "add", "change" ], [
         M.read
-        M.tr yaml
+        M.tr [ yaml, modularize ]
         T.extension ".${ build.preset }"
         T.write "build/${ build.target }"
       ]
