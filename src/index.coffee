@@ -1,4 +1,3 @@
-import * as _ from "@dashkite/joy"
 import * as M from "@dashkite/masonry"
 import yaml from "@dashkite/masonry-yaml"
 import T from "@dashkite/masonry-targets"
