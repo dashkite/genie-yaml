@@ -15,8 +15,8 @@ importers:
         specifier: 0.1.0
         version: 0.1.0
       '@dashkite/masonry-hooks':
-        specifier: link:../masonry-hooks
-        version: link:../masonry-hooks
+        specifier: 0.1.0
+        version: 0.1.0
       '@dashkite/masonry-targets':
         specifier: 0.2.0
         version: 0.2.0
@@ -629,6 +629,9 @@ packages:
 
   '@dashkite/masonry-export@0.1.0':
     resolution: {integrity: sha512-K5ILSl4b+8SatTJTO4AJO+QuBR+coXk9gkeAZRtIx7qhuhdJbB1dCq+pqscYGJ81He1lzHP4DiQtEAf8wBHykA==}
+
+  '@dashkite/masonry-hooks@0.1.0':
+    resolution: {integrity: sha512-DeRzJH5TDMMK2glUwvNjCqzsKlTrBnJ4pZfYbSIbDvstBDy/6QpHlmEHsg1LL50Olx4fEtuwpjUQ69CT6EgNoQ==}
 
   '@dashkite/masonry-targets@0.1.0':
     resolution: {integrity: sha512-nb1N+oBZLw04AFUV49ZFLBAb/NQ0fJseO6ACrEfgXkHra2I1oxwHxLIKtMqWcedQa3QP2pqA/eeBmtGiTQGM0Q==}
@@ -2169,6 +2172,12 @@ snapshots:
       - '@swc/helpers'
 
   '@dashkite/masonry-export@0.1.0': {}
+
+  '@dashkite/masonry-hooks@0.1.0':
+    dependencies:
+      '@dashkite/masonry': 0.14.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@dashkite/masonry-targets@0.1.0':
     dependencies:
