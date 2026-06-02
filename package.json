@@ -1,6 +1,6 @@
 {
   "name": "@dashkite/genie-yaml",
-  "version": "0.11.25",
+  "version": "0.11.26",
   "description": "Genie Preset for transforming YAML into JSON or JavaScript",
   "keywords": [],
   "homepage": "https://github.com/dashkite/genie-yaml#readme",
